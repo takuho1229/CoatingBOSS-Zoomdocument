@@ -1,4 +1,14 @@
 /** @type {import('next').NextConfig} */
-const nextConfig = {};
+const isGithubPages = process.env.GITHUB_PAGES === "true";
+
+const nextConfig = {
+  output: "export",
+  trailingSlash: true,
+  images: {
+    unoptimized: true,
+  },
+  basePath: isGithubPages ? "/CoatingBOSS-Zoomdocument" : "",
+  assetPrefix: isGithubPages ? "/CoatingBOSS-Zoomdocument/" : "",
+};
 
 export default nextConfig;
