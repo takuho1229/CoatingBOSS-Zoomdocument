@@ -1,5 +1,6 @@
 "use client";
 
+import type { ReactNode } from "react";
 import {
   Bath,
   CheckCircle2,
@@ -73,8 +74,8 @@ function Section({
   children,
 }: {
   title: string;
-  icon: React.ReactNode;
-  children: React.ReactNode;
+  icon: ReactNode;
+  children: ReactNode;
 }) {
   return (
     <section className="sec">
