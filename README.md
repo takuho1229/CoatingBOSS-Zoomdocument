@@ -2,6 +2,14 @@
 
 Zoom文字起こしから、住宅コーティングBOSSの家族相談用1ページLPを作成するNext.jsアプリです。
 
+## 公開URL
+
+GitHub Pagesを有効化すると、以下のURLで公開されます。
+
+https://takuho1229.github.io/CoatingBOSS-Zoomdocument/
+
+GitHubの `Settings > Pages` で、Sourceを `GitHub Actions` にしてください。その後、`Actions` タブの `Deploy to GitHub Pages` が成功すると公開されます。
+
 ## 目的
 
 Zoomで見積説明を受けたお客様が、ご家族に内容を正しく共有できるページを作ります。
