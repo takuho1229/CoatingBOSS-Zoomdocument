@@ -25,35 +25,30 @@ const strengths = [
   },
 ];
 
-const indoorServices = [
-  "浴室",
-  "キッチン天板",
-  "シンク",
-  "レンジフード",
-  "キッチンパネル",
-  "洗面台",
-  "トイレ",
-  "フローリング",
-  "玄関まわり",
-];
-
-const outdoorServices = ["窓ガラス", "外壁", "屋根"];
-
-const areas = [
+const services = [
   {
     en: "Bathroom",
-    ja: "浴室コーティング",
-    body: "浴室はカビ・皮脂汚れなどが気になりやすい場所。コーティングにより、清潔感と高級感を保ちやすくします。",
+    title: "浴室",
+    body: "カビや皮脂汚れなどが気になりやすい浴室を、清潔感のある状態に保ちやすくします。",
+    tags: ["浴槽", "壁", "床", "カウンター", "鏡"],
   },
   {
     en: "Kitchen",
-    ja: "キッチンコーティング",
-    body: "毎日使うキッチンを、気持ちよく快適な空間へ。シンクや天板まわりのお手入れをしやすくします。",
+    title: "キッチン",
+    body: "毎日使うキッチンまわりを、気持ちよく使いやすい空間に整えます。",
+    tags: ["キッチン天板", "シンク", "レンジフード", "キッチンパネル"],
   },
   {
     en: "Toilet / Washbasin",
-    ja: "トイレ・洗面コーティング",
-    body: "日々何度も使う場所だからこそ、清潔感が大切。水まわりの美しさを保ちやすくします。",
+    title: "トイレ・洗面",
+    body: "日々何度も使う場所だからこそ、清潔感を保ちやすい状態に整えます。",
+    tags: ["トイレ", "洗面台"],
+  },
+  {
+    en: "Window / Exterior",
+    title: "窓ガラス・屋外まわり",
+    body: "窓ガラスや外壁・屋根など、住まいの外側まわりにも対応できます。",
+    tags: ["窓ガラス", "外壁", "屋根"],
   },
 ];
 
@@ -71,19 +66,6 @@ function SectionTitle({ en, ja }: { en: string; ja: string }) {
       <p>{en}</p>
       <h2>{ja}</h2>
     </div>
-  );
-}
-
-function ServiceCard({ title, items }: { title: string; items: string[] }) {
-  return (
-    <article className="service-card">
-      <h3>{title}</h3>
-      <ul>
-        {items.map((item) => (
-          <li key={item}>{item}</li>
-        ))}
-      </ul>
-    </article>
   );
 }
 
@@ -148,23 +130,20 @@ export default function Page() {
       <section className="page-section service-section">
         <div className="wide-content">
           <SectionTitle en="SERVICE" ja="施工できる主な箇所" />
+          <p className="service-lead">
+            水まわりを中心に、窓ガラスや屋外まわりまで、住まいのさまざまな箇所に施工できます。
+          </p>
           <div className="service-grid">
-            <ServiceCard title="室内・水まわり" items={indoorServices} />
-            <ServiceCard title="窓ガラス・屋外まわり" items={outdoorServices} />
-          </div>
-        </div>
-      </section>
-
-      <section className="page-section area-section">
-        <div className="wide-content">
-          <SectionTitle en="COATING AREA" ja="毎日使う場所を、もっと美しく、もっと快適に" />
-          <div className="area-grid">
-            {areas.map((area) => (
-              <article className="area-block" key={area.en}>
-                <p>{area.en}</p>
-                <h3>{area.ja}</h3>
-                <span />
-                <p className="area-body">{area.body}</p>
+            {services.map((service) => (
+              <article className="service-card" key={service.en}>
+                <p className="service-card-en">{service.en}</p>
+                <h3 className="service-card-title">{service.title}</h3>
+                <p className="service-card-text">{service.body}</p>
+                <div className="service-tags">
+                  {service.tags.map((tag) => (
+                    <span className="service-tag" key={tag}>{tag}</span>
+                  ))}
+                </div>
               </article>
             ))}
           </div>
