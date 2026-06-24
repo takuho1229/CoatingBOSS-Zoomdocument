@@ -30,25 +30,21 @@ const services = [
     en: "Bathroom",
     title: "浴室",
     body: "カビや皮脂汚れなどが気になりやすい浴室を、清潔感のある状態に保ちやすくします。",
-    tags: ["浴槽", "壁", "床", "カウンター", "鏡"],
   },
   {
     en: "Kitchen",
     title: "キッチン",
     body: "毎日使うキッチンまわりを、気持ちよく使いやすい空間に整えます。",
-    tags: ["キッチン天板", "シンク", "レンジフード", "キッチンパネル"],
   },
   {
     en: "Toilet / Washbasin",
     title: "トイレ・洗面",
     body: "日々何度も使う場所だからこそ、清潔感を保ちやすい状態に整えます。",
-    tags: ["トイレ", "洗面台"],
   },
   {
     en: "Window / Exterior",
     title: "窓ガラス・屋外まわり",
     body: "窓ガラスや外壁・屋根など、住まいの外側まわりにも対応できます。",
-    tags: ["窓ガラス", "外壁", "屋根"],
   },
 ];
 
@@ -102,10 +98,12 @@ export default function Page() {
       </section>
 
       <section className="page-section origin-section">
-        <div className="narrow-content">
-          <SectionTitle en="ORIGIN" ja="私たちが大切にしていること" />
-          <div className="body-copy strong-copy">
-            <p>住宅は、購入して終わりではありません。</p>
+        <div className="origin-inner">
+          <p className="origin-kicker">ORIGIN</p>
+          <h2 className="origin-title">私たちが大切にしていること</h2>
+          <p className="origin-lead">住宅は、購入して終わりではありません。</p>
+          <div className="origin-line" />
+          <div className="origin-text">
             <p>毎日使う場所だからこそ、少しずつ汚れが蓄積し、気づいたときにはお手入れが大変になってしまいます。</p>
             <p>コーティングBOSSは、“住まいをきれいに使い続ける”という考え方を、住宅購入後の新しい選択肢として広げていきたいと考えています。</p>
           </div>
@@ -118,9 +116,9 @@ export default function Page() {
           <div className="strength-grid">
             {strengths.map((item) => (
               <article className="strength-card" key={item.number}>
-                <span>{item.number}</span>
-                <h3>{item.title}</h3>
-                <p>{item.body}</p>
+                <span className="strength-number">{item.number}</span>
+                <h3 className="strength-title">{item.title}</h3>
+                <p className="strength-text">{item.body}</p>
               </article>
             ))}
           </div>
@@ -139,14 +137,10 @@ export default function Page() {
                 <p className="service-card-en">{service.en}</p>
                 <h3 className="service-card-title">{service.title}</h3>
                 <p className="service-card-text">{service.body}</p>
-                <div className="service-tags">
-                  {service.tags.map((tag) => (
-                    <span className="service-tag" key={tag}>{tag}</span>
-                  ))}
-                </div>
               </article>
             ))}
           </div>
+          <div className="section-divider" />
         </div>
       </section>
 
