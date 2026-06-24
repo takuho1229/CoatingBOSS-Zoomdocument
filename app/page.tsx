@@ -1,4 +1,6 @@
-import { ArrowRight, Check, MessageCircle } from "lucide-react";
+import { Check } from "lucide-react";
+
+const conceptImageUrl = "https://coating-boss.com/wp-content/uploads/2023/10/block_1-1024x768.jpg";
 
 const strengths = [
   {
@@ -41,7 +43,7 @@ const areas = [
   {
     en: "Bathroom",
     ja: "浴室コーティング",
-    body: "浴室は水垢・カビ・皮脂汚れが気になりやすい場所。コーティングにより、清潔感と高級感を保ちやすくします。",
+    body: "浴室はカビ・皮脂汚れなどが気になりやすい場所。コーティングにより、清潔感と高級感を保ちやすくします。",
   },
   {
     en: "Kitchen",
@@ -58,7 +60,7 @@ const areas = [
 const recommends = [
   "新築のきれいな状態を長く保ちたい",
   "水まわりの掃除をラクにしたい",
-  "水垢やカビ汚れをできるだけ防ぎたい",
+  "カビや日々の汚れをできるだけ防ぎたい",
   "せっかくの新居を大切に使いたい",
   "入居前にまとめて施工しておきたい",
 ];
@@ -68,21 +70,6 @@ function SectionTitle({ en, ja }: { en: string; ja: string }) {
     <div className="section-title">
       <p>{en}</p>
       <h2>{ja}</h2>
-    </div>
-  );
-}
-
-function CtaButtons({ compact = false }: { compact?: boolean }) {
-  return (
-    <div className={compact ? "cta-actions compact" : "cta-actions"}>
-      <a className="button primary" href="#contact">
-        {compact ? <MessageCircle size={20} /> : null}
-        {compact ? "LINEで無料見積り" : "無料見積りはこちら"}
-        <ArrowRight size={18} />
-      </a>
-      <a className="button secondary" href="#contact">
-        施工箇所を相談する
-      </a>
     </div>
   );
 }
@@ -99,7 +86,6 @@ export default function Page() {
             上質を纏う、未来を守る。<br />
             住宅の美しさと清潔感を、長く保つための住宅コーティング。
           </p>
-          <CtaButtons />
         </div>
       </section>
 
@@ -113,7 +99,7 @@ export default function Page() {
                 コーティングBOSSは、大切な住空間をいつまでも美しく維持するための住宅コーティングサービスです。
               </p>
               <p>
-                水まわりを中心に、日々のお手入れをしやすくし、汚れ・水垢・カビなどが気になりやすい場所を美しく保ちやすくします。
+                水まわりを中心に、日々のお手入れをしやすくし、汚れやカビなどが気になりやすい場所を美しく保ちやすくします。
               </p>
               <p>
                 新築時のきれいな状態をできるだけ長く守りたい方におすすめのサービスです。
@@ -121,7 +107,7 @@ export default function Page() {
             </div>
           </div>
           <figure className="concept-image">
-            <img src="images/concept-block.jpg" alt="ブロックコーティングのイメージ" />
+            <img src={conceptImageUrl} alt="ブロックコーティング。コーティングBOSS｜住宅コーティング" />
           </figure>
         </div>
       </section>
@@ -132,7 +118,7 @@ export default function Page() {
           <div className="body-copy strong-copy">
             <p>住宅は、購入して終わりではありません。</p>
             <p>
-              毎日使う場所だからこそ、少しずつ汚れや水垢が蓄積し、気づいたときにはお手入れが大変になってしまいます。
+              毎日使う場所だからこそ、少しずつ汚れが蓄積し、気づいたときにはお手入れが大変になってしまいます。
             </p>
             <p>
               コーティングBOSSは、“住まいをきれいに使い続ける”という考え方を、住宅購入後の新しい選択肢として広げていきたいと考えています。
@@ -197,10 +183,9 @@ export default function Page() {
         </div>
       </section>
 
-      <section className="page-section final-cta" id="contact">
+      <section className="page-section closing-section">
         <div className="narrow-content">
-          <h2>まずは施工箇所を一緒に確認し、ご自宅に合った内容でお見積りいたします。</h2>
-          <CtaButtons compact />
+          <h2>ご自宅の状態やご希望に合わせて、施工箇所を一緒に確認しながらご案内いたします。</h2>
         </div>
       </section>
     </main>
