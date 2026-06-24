@@ -1,59 +1,53 @@
-import { Check } from "lucide-react";
-
 const conceptImageUrl = "https://coating-boss.com/wp-content/uploads/2023/10/block_1-1024x768.jpg";
-
-const strengths = [
-  {
-    number: "01",
-    title: "毎日のお掃除をラクに、美しい仕上がりへ",
-    body: "汚れがつきにくく、落としやすい状態をつくることで、日々のお手入れをラクにします。見た目にも美しく、清潔感のある仕上がりを保ちやすくします。",
-  },
-  {
-    number: "02",
-    title: "素材の質感をそのままに",
-    body: "素材本来の見た目や質感を大きく変えず、自然な仕上がりを大切にしています。新築時の雰囲気を損なわずに施工できます。",
-  },
-  {
-    number: "03",
-    title: "UVカット効果",
-    body: "紫外線による劣化や色あせを抑える効果が期待できます。窓ガラスや屋外まわりなど、日差しが気になる箇所にもおすすめです。",
-  },
-  {
-    number: "04",
-    title: "ほとんどの素材に施工可能",
-    body: "浴室・キッチン・洗面・トイレなどの水まわりをはじめ、窓ガラスや外壁など、住まいのさまざまな素材に対応できます。",
-  },
-];
 
 const services = [
   {
-    en: "Bathroom",
-    title: "浴室",
-    body: "カビや皮脂汚れなどが気になりやすい浴室を、清潔感のある状態に保ちやすくします。",
+    en: "Water Area",
+    title: "水まわり",
+    body: "日々の汚れがたまりやすく、目につきやすいキッチンや浴室などのお手入れをラクに。清潔感を保ちやすくし、仕上がりもより美しく整えます。",
+    tags: "浴室 / キッチン / トイレ / 洗面台 / 床 など",
   },
   {
-    en: "Kitchen",
-    title: "キッチン",
-    body: "毎日使うキッチンまわりを、気持ちよく使いやすい空間に整えます。",
+    en: "Exterior",
+    title: "外壁・屋根",
+    body: "紫外線や風雨など、住まいの外側が受けるさまざまなダメージから強固にガード。劣化を抑え、美しい外観を長く保ちやすくします。",
+    tags: "外壁 / 屋根 など",
   },
   {
-    en: "Toilet / Washbasin",
-    title: "トイレ・洗面",
-    body: "日々何度も使う場所だからこそ、清潔感を保ちやすい状態に整えます。",
+    en: "Concrete Floor",
+    title: "土間",
+    body: "玄関や駐車場など、汚れが染み込みやすく傷みやすい箇所を、簡単なお掃除で整えやすい状態へ。日常の清掃性を高め、美観を保ちやすくします。",
+    tags: "駐車場土間 / 玄関土間 など",
   },
   {
-    en: "Window / Exterior",
-    title: "窓ガラス・屋外まわり",
-    body: "窓ガラスや外壁・屋根など、住まいの外側まわりにも対応できます。",
+    en: "Window Glass",
+    title: "窓ガラス",
+    body: "黒ずみや花粉などの付着を大幅に軽減し、日々のお手入れをしやすくします。水拭きで透明感のあるきれいな状態を維持しやすくします。",
+    tags: "窓ガラス など",
   },
 ];
 
-const recommends = [
-  "新築のきれいな状態を長く保ちたい",
-  "水まわりの掃除をラクにしたい",
-  "カビや日々の汚れをできるだけ防ぎたい",
-  "せっかくの新居を大切に使いたい",
-  "入居前にまとめて施工しておきたい",
+const qualities = [
+  {
+    en: "Nationwide",
+    title: "全国対応",
+    body: "全国の施工ネットワークにより、地域を問わずご相談いただけます。各エリアの施工スタッフが、ご自宅の状況に合わせて丁寧に対応いたします。",
+  },
+  {
+    en: "Durability",
+    title: "超高耐久",
+    body: "日々使用する住まいの環境を考え、長く美しさを保ちやすい高耐久コーティングを採用しています。水まわりから屋外まわりまで、暮らしに寄り添う耐久性を追求しています。",
+  },
+  {
+    en: "Warranty",
+    title: "長期保証",
+    body: "施工後も安心してお使いいただけるよう、保証体制を整えています。万が一気になる点がある場合も、内容を確認したうえで適切にご案内いたします。",
+  },
+  {
+    en: "Difference",
+    title: "他との違い",
+    body: "見た目の美しさだけでなく、素材の質感を活かした自然な仕上がりと、お手入れのしやすさを大切にしています。住まい全体を長くきれいに使うためのコーティングをご提案します。",
+  },
 ];
 
 function SectionTitle({ en, ja }: { en: string; ja: string }) {
@@ -97,39 +91,11 @@ export default function Page() {
         </div>
       </section>
 
-      <section className="page-section origin-section">
-        <div className="origin-inner">
-          <p className="origin-kicker">ORIGIN</p>
-          <h2 className="origin-title">私たちが大切にしていること</h2>
-          <p className="origin-lead">住宅は、購入して終わりではありません。</p>
-          <div className="origin-line" />
-          <div className="origin-text">
-            <p>毎日使う場所だからこそ、少しずつ汚れが蓄積し、気づいたときにはお手入れが大変になってしまいます。</p>
-            <p>コーティングBOSSは、“住まいをきれいに使い続ける”という考え方を、住宅購入後の新しい選択肢として広げていきたいと考えています。</p>
-          </div>
-        </div>
-      </section>
-
-      <section className="page-section strength-section">
-        <div className="wide-content">
-          <SectionTitle en="STRENGTH" ja="BOSSの強み" />
-          <div className="strength-grid">
-            {strengths.map((item) => (
-              <article className="strength-card" key={item.number}>
-                <span className="strength-number">{item.number}</span>
-                <h3 className="strength-title">{item.title}</h3>
-                <p className="strength-text">{item.body}</p>
-              </article>
-            ))}
-          </div>
-        </div>
-      </section>
-
       <section className="page-section service-section">
         <div className="wide-content">
           <SectionTitle en="SERVICE" ja="施工できる主な箇所" />
           <p className="service-lead">
-            水まわりを中心に、窓ガラスや屋外まわりまで、住まいのさまざまな箇所に施工できます。
+            水まわりから外壁・屋根、土間、窓ガラスまで、住まいのさまざまな箇所に施工できます。
           </p>
           <div className="service-grid">
             {services.map((service) => (
@@ -137,6 +103,7 @@ export default function Page() {
                 <p className="service-card-en">{service.en}</p>
                 <h3 className="service-card-title">{service.title}</h3>
                 <p className="service-card-text">{service.body}</p>
+                <p className="service-card-tags">{service.tags}</p>
               </article>
             ))}
           </div>
@@ -144,23 +111,28 @@ export default function Page() {
         </div>
       </section>
 
-      <section className="page-section recommend-section">
-        <div className="content-grid recommend-grid">
-          <SectionTitle en="RECOMMEND" ja="こんな方におすすめです" />
-          <ul className="recommend-list">
-            {recommends.map((item) => (
-              <li key={item}>
-                <Check size={20} />
-                <span>{item}</span>
-              </li>
+      <section className="page-section quality-section">
+        <div className="wide-content">
+          <SectionTitle en="BOSS QUALITY" ja="安心してお任せいただける理由" />
+          <p className="quality-lead">
+            コーティングBOSSは、施工品質・対応エリア・耐久性・保証体制にこだわり、大切な住まいを長く美しく保つための施工をご提供しています。
+          </p>
+          <div className="quality-grid">
+            {qualities.map((quality) => (
+              <article className="quality-card" key={quality.en}>
+                <p className="quality-card-en">{quality.en}</p>
+                <h3 className="quality-card-title">{quality.title}</h3>
+                <p className="quality-card-text">{quality.body}</p>
+              </article>
             ))}
-          </ul>
+          </div>
         </div>
       </section>
 
       <section className="page-section closing-section">
         <div className="narrow-content">
-          <h2>ご自宅の状態やご希望に合わせて、施工箇所を一緒に確認しながらご案内いたします。</h2>
+          <SectionTitle en="CLOSING" ja="ご自宅に合わせて、最適な施工箇所をご案内します" />
+          <p className="closing-copy">ご自宅の状況やご希望に合わせて、必要な施工箇所や施工範囲を一緒に確認しながらご案内いたします。</p>
         </div>
       </section>
     </main>
