@@ -12,7 +12,13 @@ GitHub Pagesを有効化すると、以下のURLで公開されます。
 
 https://takuho1229.github.io/CoatingBOSS-Zoomdocument/
 
-GitHubの `Settings > Pages` で、Sourceを `GitHub Actions` にしてください。その後、`Actions` タブの `Deploy to GitHub Pages` が成功すると公開されます。
+GitHubの `Settings > Pages` で、以下のように設定してください。
+
+- Source: `Deploy from a branch`
+- Branch: `main`
+- Folder: `/ (root)`
+
+保存後、数十秒から数分で公開URLが見られるようになります。
 
 ## 目的
 
@@ -41,7 +47,16 @@ CTAボタンのリンク先は仮で `#contact` にしています。実際のLI
 
 このリポジトリには、お客様名、実際のZoom文字起こし、見積詳細などの個人情報・商談情報を保存しないでください。
 
+## ファイル構成
+
+- `index.html`: GitHub Pagesでそのまま表示する静的LP
+- `app/page.tsx`: Next.js版のLP
+- `app/globals.css`: Next.js版のスタイル
+- `public/images/concept-block.jpg`: CONCEPTセクションで使用する画像
+
 ## ローカル開発
+
+Next.js版をローカルで確認する場合のみ使用します。
 
 ```bash
 npm install
